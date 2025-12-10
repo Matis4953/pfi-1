@@ -31,7 +31,7 @@
     margin-bottom: 4px;
 }
 
-/* NOM DES JOURS (DIM LUN MAR…) */
+/* NOM DES JOURS*/
 .day-name {
     font-weight: bold;
     font-size: 13px;
@@ -49,7 +49,7 @@
     position: relative;
 }
 
-/* TOOLTIP CUSTOM (fix flicker + no ?) */
+/* TOOLTIP */
 .holiday:hover::after {
     content: attr(data-info);
     position: absolute;
@@ -63,7 +63,7 @@
     font-size: 12px;
     white-space: nowrap;
     z-index: 999;
-    pointer-events: none; /* 🔥 empêche le clignotement */
+    pointer-events: none;
 }
 
 /* CASES VIDES */
