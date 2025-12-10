@@ -1,0 +1,27 @@
+/* Animation fade */
+.fading {
+    animation: fading 8s infinite;
+}
+
+@keyframes fading {
+    0% {opacity: 0;}
+    20% {opacity: 1;}
+    80% {opacity: 1;}
+    100% {opacity: 0;}
+}
+
+/* CONTAINER */
+.slideshow {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* IMAGES DU SLIDESHOW */
+.slideshow img {
+    width: 100%;
+    max-width: 500px; 
+    border-radius: 10px;
+    display: none;
+}

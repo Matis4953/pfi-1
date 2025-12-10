@@ -1,0 +1,72 @@
+/* CONTENEUR DU CALENDRIER */
+.calendar-2026 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+/* BLOC MENSUEL */
+.month {
+    border: 1px solid #ddd;
+    background: #fafafa;
+    border-radius: 12px;
+    padding: 10px;
+    width: 250px;
+}
+
+/* NOM DU MOIS */
+.month-name {
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+/* SEMAINE (ROW) */
+.week {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    margin-bottom: 4px;
+}
+
+/* NOM DES JOURS (DIM LUN MAR…) */
+.day-name {
+    font-weight: bold;
+    font-size: 13px;
+}
+
+/* JOUR NORMAL */
+.day {
+    padding: 3px 0;
+}
+
+/* JOUR FÉRIÉ */
+.holiday {
+    color: #e6a200;
+    font-weight: bold;
+    position: relative;
+}
+
+/* TOOLTIP CUSTOM (fix flicker + no ?) */
+.holiday:hover::after {
+    content: attr(data-info);
+    position: absolute;
+    top: -32px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #333;
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+    z-index: 999;
+    pointer-events: none; /* 🔥 empêche le clignotement */
+}
+
+/* CASES VIDES */
+.empty {
+    visibility: hidden;
+}

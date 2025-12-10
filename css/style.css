@@ -1,0 +1,106 @@
+:root {
+    --gap: 5px;
+    --trans-speed: 0.25s;
+    --accent-blue: #0066cc;
+    --accent-orange: #e6a200;
+    --border-light: #dddddd;
+}
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: white;
+}
+
+/* PAGE LAYOUT */
+.page {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.main {
+    flex: 1;
+    overflow-y: auto;
+}
+
+/* HEADER + MENU */
+.headerMenu {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.siteIcon {
+    width: 45px;
+    height: 45px;
+    background-image: url('../images/favicon.png');
+    background-size: cover;
+    border-radius: 50%;
+}
+
+.menu {
+    display: flex;
+    gap: 20px;
+}
+
+.menu a {
+    text-decoration: none;
+}
+
+.menuItem {
+    font-size: 22px;
+    padding: 5px 10px;
+    border-radius: 6px;
+    color: var(--accent-blue);
+    background: white;
+    transition: var(--trans-speed);
+}
+
+.menuItem:hover {
+    background: black;
+    color: white;
+}
+
+.menu .active {
+    color: var(--accent-orange);
+}
+
+/* MOSAÏQUE */
+.mosaic-grid {
+    display: grid;
+    gap: 6px;
+}
+
+@media (max-width: 500px) { .mosaic-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 500px) and (max-width: 700px) { .mosaic-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 700px) and (max-width: 900px) { .mosaic-grid { grid-template-columns: repeat(4, 1fr); } }
+@media (min-width: 900px) and (max-width: 1100px) { .mosaic-grid { grid-template-columns: repeat(5, 1fr); } }
+@media (min-width: 1100px) { .mosaic-grid { grid-template-columns: repeat(6, 1fr); } }
+
+.imageFrame {
+    aspect-ratio: 1/1;
+    background-size: cover;
+    background-position: center;
+    border-radius: 6px;
+    transition: 0.2s;
+}
+
+.imageFrame:hover {
+    transform: scale(1.05);
+}
+
+/* FOOTER */
+.footer {
+    padding: 10px 0;
+    font-size: 14px;
+    color: #444;
+}
